@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+   
+    <!-- ************************************************************************* -->
+
+    <!-- css link -->
+    <link rel = "stylesheet" href="style.css">
+
+    <!-- ************************************************************************* -->
+
+</head>
+<body>
+    
+    <h1>Word and character counter</h1>
+    <textarea id="textbox" cols="50" rows="20"></textarea>
+    <p>
+        <span id="word">0</span> word and 
+        <span id="char">0</span> characters
+    </p>  
+
+<!-- ***************************************************************************** -->
+    <!-- internal javascript -->
+    <script>
+        let textbox = document.getElementById("textbox");
+        textbox.addEventListener('input', function(){
+            var text = this.value;
+    let char = text.length;
+    document.getElementById("char").innerHTML=char;
+    
+    text =text.trim();
+    let word = text.split(" ");
+    var cleanList =word.filter(function(elm){
+        return elm != "";
+    });
+    console.log(cleanList);
+    document.getElementById("word").innerHTML = cleanList.length;
+    });
+</script> 
+<!-- ****************************************************************************** -->
+
+</body>
+
+<!-- ****************************************************************************** -->
+<!-- JS link (external) -->
+<script scr="script.js"></script>
+<!-- ****************************************************************************** -->
+</html>
